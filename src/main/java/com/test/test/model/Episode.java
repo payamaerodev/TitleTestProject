@@ -10,23 +10,25 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-
 @Data
 @Getter
 @Setter
 
-@Entity(name = "rate")
-@Table(name = "RATE")
-public class Rate implements Serializable {
+@Entity(name = "episode")
+@Table(name = "EPISODE")
+public class Episode implements Serializable {
 
     @javax.persistence.Id
-//    @Id
+    @Id
     @Column
-    String ID;
+    String id;
 
     @Column
-    private Double averageRating;
+    private String parentConst;
 
     @Column
-    Integer numVotes;
+    Integer seasonNumber;
+
+    @Column
+    Integer episodeNumber;
 }

@@ -8,39 +8,45 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
+
 
 @Getter
 @Setter
 @Data
-
-@Entity(name = "akas")
-@Table(name = "AKAS")
-public class Akas implements Serializable {
+@Entity(name = "titleBasic")
+@Table(name = "TITLE_BASIC")
+public class TitleBasic implements Serializable {
     @javax.persistence.Id
     @Id
     @Column
     String id;
 
     @Column
-    Integer ordering;
+    private String type;
+
+      @Column
+    private String primaryTitle;
 
     @Column
-    private String title;
+    private String originalTitle;
 
     @Column
-    String region;
+    private String isAdult;
 
     @Column
-    String language;
+    private String startYear;
 
     @Column
-    String types;
+    private String endYear;
 
     @Column
-    String attributes;
+    private String runtimeMinutes;
 
     @Column
-    Integer isOriginalTitle;
+    private String genres;
+
 }

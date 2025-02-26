@@ -10,23 +10,32 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-
-@Data
 @Getter
+@Data
 @Setter
 
-@Entity(name = "rate")
-@Table(name = "RATE")
-public class Rate implements Serializable {
+@Entity(name = "principal")
+@Table(name = "PRINCIPAL")
+public class Principal implements Serializable {
+
 
     @javax.persistence.Id
-//    @Id
+    @Id
     @Column
-    String ID;
+    String id;
 
     @Column
-    private Double averageRating;
+    private Integer ordering;
 
     @Column
-    Integer numVotes;
+    String nconst;
+
+    @Column
+    String category;
+
+    @Column
+    String job;
+
+    @Column
+    String characters;
 }
