@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -31,5 +32,10 @@ public class TitleController {
     @GetMapping(value = "/test/best")
     public Rate getBestMovieBYRate() {
         return service.getBestMovieBYRate();
+    }
+
+    @GetMapping(value = "/count")
+    public Integer getCount(HttpServletRequest request) {
+     return   (Integer) request.getAttribute("count");
     }
 }
