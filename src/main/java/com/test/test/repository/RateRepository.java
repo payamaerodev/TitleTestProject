@@ -14,8 +14,6 @@ public interface RateRepository extends CrudRepository<Rate, String> {
 
     public Rate save(Entity entity);
     @Query("select r from rate r order by r.averageRating,r.numVotes ")
-//    @Query(value = "SELECT  AVERAGE_RATING FROM RATE", nativeQuery = true)
-
     public List<Rate> bestRate();
 
 }

@@ -20,7 +20,7 @@ public class TitleController {
     @Autowired
     TitleService service;
 
-    @GetMapping(value = "/test")
+    @GetMapping(value = "/live-directors")
     public List<Crew> getLiveDirectors() {
         return service.getLive();
     }
@@ -29,7 +29,7 @@ public class TitleController {
         return service.getTileForActs(act1,act2);
     }
 
-    @GetMapping(value = "/test/best")
+    @GetMapping(value = "/genre/best")
     public Rate getBestMovieBYRate() {
         return service.getBestMovieBYRate();
     }
