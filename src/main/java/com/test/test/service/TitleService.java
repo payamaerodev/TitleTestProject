@@ -47,6 +47,8 @@ public class TitleService {
         List<Principal> originalTitles = principalRepo.getTitlesByActs(act1, act2);
         List<String> moviesForAct1 = originalTitles.stream().map(Principal::getId).filter(id -> id.equals(act1)).toList();
         List<String> moviesForAct2 = originalTitles.stream().map(Principal::getId).filter(id -> id.equals(act2)).toList();
+        List<String> moviesForAct3 = originalTitles.stream().map(Principal::getId).filter(id -> id.equals(act2)).collect(Collectors.toList());
+        moviesForAct3.contains("abs");
         return originalTitles.stream().filter(l -> moviesForAct1.contains(l.getId()) && moviesForAct2.contains(l.getId())).toList();
     }
 
